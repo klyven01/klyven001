@@ -19,6 +19,12 @@
  *   ]
  * `hex` is the colour code shown as a swatch — search "hex color picker"
  * online to find the code for any colour you want.
+ *
+ * PER-COLOUR PHOTOS (optional): if you have separate front/back photos for
+ * each colour, add a `colorImages` object keyed by the exact colour name —
+ * the product page automatically swaps photos when the shopper picks a
+ * colour. Products without `colorImages` just show the default
+ * `images.front` / `images.back` regardless of colour.
  * ---------------------------------------------------------------
  */
 
@@ -147,6 +153,32 @@ export const products = [
     inStock: true,
     fabric: '240 GSM heavyweight combed cotton. Enzyme-washed for a soft, broken-in hand-feel from the first wear.',
     fit: 'Oversized fit. Model is 6\'0" wearing size L. Size down for a less relaxed drape.',
+    care: 'Machine wash cold, inside out. Do not bleach. Tumble dry low. Do not iron over print.',
+  },
+  {
+    id: 'design-001',
+    sku: 'KLV-001',
+    category: 'tshirts',
+    name: 'DESIGN 001',
+    price: 1799,
+    compareAtPrice: null,
+    description: 'Replace this with your real product description.',
+    // Default photos (used if colorImages doesn't have the selected colour)
+    images: { front: '/products/design001frontblack.png', back: '/products/design001backblack.jpg' },
+    // Separate photos per colour — the product page swaps automatically
+    // when a shopper picks a colour.
+    colorImages: {
+      'Jet Black': { front: '/products/design001frontblack.png', back: '/products/design001backblack.jpg' },
+      'Bone White': { front: '/products/design001frontwhite.png', back: '/products/design001backwhite.jpg' },
+    },
+    sizesAvailable: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL', 'XXXXL'],
+    colors: [
+      { name: 'Jet Black', hex: '#0A0A0A' },
+      { name: 'Bone White', hex: '#F3F2ED' },
+    ],
+    inStock: true,
+    fabric: '240 GSM heavyweight combed cotton.',
+    fit: 'Oversized fit.',
     care: 'Machine wash cold, inside out. Do not bleach. Tumble dry low. Do not iron over print.',
   },
 ];
