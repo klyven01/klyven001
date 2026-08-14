@@ -164,7 +164,7 @@ export const products = [
     compareAtPrice: null,
     description: 'Replace this with your real product description.',
     // Default photos (used if colorImages doesn't have the selected colour)
-    images: { front: '/products/design001frontblack.png', back: '/products/design001backblack.jpg' },
+    images: { front: 'design001frontblack.jpg.png', back: '/products/design001backblack.jpg' },
     // Separate photos per colour — the product page swaps automatically
     // when a shopper picks a colour.
     colorImages: {
