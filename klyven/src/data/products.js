@@ -168,8 +168,8 @@ export const products = [
     // Separate photos per colour — the product page swaps automatically
     // when a shopper picks a colour.
     colorImages: {
-      'Jet Black': { front: '/products/design001frontblack.png', back: '/products/design001backblack.jpg' },
-      'Bone White': { front: '/products/design001frontwhite.png', back: '/products/design001backwhite.jpg' },
+      'Jet Black': { front: '/products/design001frontblack.jpg.png', back: '/products/design001backblack.jpg' },
+      'Bone White': { front: '/products/design001frontwhite.jpg.png', back: '/products/design001backwhite.jpg' },
     },
     sizesAvailable: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL', 'XXXXL'],
     colors: [
