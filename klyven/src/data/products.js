@@ -160,8 +160,8 @@ export const products = [
     sku: 'KLV-001',
     category: 'tshirts',
     name: 'DESIGN 001',
-    price: 1799,
-    compareAtPrice: null,
+    price: 699,
+    compareAtPrice: 1000,
     description: 'Replace this with your real product description.',
     // Default photos (used if colorImages doesn't have the selected colour)
     images: { front: '/products/design001frontblack.jpg.png', back: '/products/design001backblack.jpg' },
@@ -181,6 +181,25 @@ export const products = [
     fit: 'Oversized fit.',
     care: 'Machine wash cold, inside out. Do not bleach. Tumble dry low. Do not iron over print.',
   },
+{
+  id: 'design-002',              // unique naam, spaces mat rakhna
+  sku: 'KLV-002',
+  category: 'tshirts',
+  name: 'DESIGN 002',
+  price: 599,
+  compareAtPrice: null,
+  description: 'Apna description likho.',
+  images: { front: '/products/design002blackfront.png', back: '/products/design002blackback.png' },
+  sizesAvailable: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL', 'XXXXL'],
+  colors: [
+    { name: 'Jet Black', hex: '#0A0A0A' },
+  ],
+  inStock: true,
+  fabric: '240 GSM heavyweight combed cotton.',
+  fit: 'Oversized fit.',
+  care: 'Machine wash cold, inside out.',
+},
+  
 ];
 
 export const getProductById = (id) => products.find((p) => p.id === id);
