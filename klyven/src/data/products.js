@@ -189,8 +189,8 @@ export const products = [
   price: 599,
   compareAtPrice: null,
   description: 'Apna description likho.',
-  images: { front: '/products/design002blackfront.png', back: '/products/design002blackback.png' },
-  sizesAvailable: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL', 'XXXXL'],
+  images: { front: '/products/design002blackfront.jpg', back: '/products/design002blackback.png' },
+  sizesAvailable: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL', ],
   colors: [
     { name: 'Jet Black', hex: '#0A0A0A' },
   ],
