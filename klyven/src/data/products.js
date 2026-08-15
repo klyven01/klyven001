@@ -182,13 +182,56 @@ export const products = [
     care: 'Machine wash cold, inside out. Do not bleach. Tumble dry low. Do not iron over print.',
   },
 {
-  id: 'design-002',              // unique naam, spaces mat rakhna
+  id: 'BE THE EXCEPTION — Oversized T-Shirt',              // unique naam, spaces mat rakhna
   sku: 'KLV-002',
   category: 'tshirts',
   name: 'DESIGN 002',
   price: 599,
   compareAtPrice: null,
-  description: 'Apna description likho.',
+  description: 'Not made to blend in.
+A bold oversized streetwear essential built around one idea — BE THE EXCEPTION. Featuring a statement back graphic designed for those who choose their own path.
+  
+  BE THE EXCEPTION.
+
+Kuch log crowd follow karte hain. Kuch apna path banate hain.
+
+KLYVEN ka Be The Exception Oversized T-Shirt ek bold statement piece hai, designed for a generation that refuses to blend in. The oversized silhouette gives it a relaxed streetwear look, while the striking back graphic brings the attitude.
+
+Pair it with cargos, denim or relaxed-fit bottoms for an effortless everyday streetwear fit.
+
+KLYVEN — MOVE DIFFERENT.
+
+Product Details
+Fit: Oversized / Relaxed
+Style: Unisex Streetwear
+Colour: Black
+Graphic: Statement Back Print
+Sizes: S, M, L, XL, XXL, XXXL
+Collection: DROP 01
+Design: BE THE EXCEPTION
+Why You'll Like It
+Bold statement back graphic
+Relaxed oversized silhouette
+Easy to style
+Designed for everyday streetwear
+Unisex design
+Part of the limited KLYVEN DROP 01
+Style It With
+
+Cargos + sneakers + minimal accessories
+
+For a clean look, pair it with neutral bottoms.
+For a stronger streetwear look, go with cargos and chunky sneakers.
+
+Care Instructions
+Machine wash cold
+Wash inside out
+Wash dark colours separately
+Do not bleach
+Avoid direct ironing on the print
+Do not dry clean .
+  
+',
   images: { front: '/products/design002blackfront.jpg', back: '/products/design002blackback.png' },
   sizesAvailable: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL', ],
   colors: [
