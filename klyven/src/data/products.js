@@ -229,9 +229,7 @@ Wash inside out
 Wash dark colours separately
 Do not bleach
 Avoid direct ironing on the print
-Do not dry clean .
-  
-',
+Do not dry clean .,
   images: { front: '/products/design002blackfront.jpg', back: '/products/design002blackback.png' },
   sizesAvailable: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL', ],
   colors: [
