@@ -164,13 +164,13 @@ export const products = [
     compareAtPrice: null,
     description: 'Replace this with your real product description.',
     // Default photos (used if colorImages doesn't have the selected colour)
-    images: { front: 'design001frontblack.jpg.png', back: '/products/design001backblack.jpg' },
+   images: { front: '/products/design001frontblack.jpg.png', back: '/products/design001backblack.jpg' }
     // Separate photos per colour — the product page swaps automatically
     // when a shopper picks a colour.
-    colorImages: {
-      'Jet Black': { front: '/products/design001frontblack.jpg.png', back: '/products/design001backblack.jpg' },
-      'Bone White': { front: '/products/design001frontblack.jpg.png', back: '/products/design001backwhite.jpg' },
-    },
+colorImages: {
+  'Jet Black': { front: '/products/design001frontblack.jpg.png', back: '/products/design001backblack.jpg' },
+  'Bone White': { front: '/products/design001frontwhite.jpg.png', back: '/products/design001backwhite.jpg' },
+},
     sizesAvailable: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL', 'XXXXL'],
     colors: [
       { name: 'Jet Black', hex: '#0A0A0A' },
