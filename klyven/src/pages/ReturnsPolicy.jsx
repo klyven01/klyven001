@@ -40,8 +40,8 @@ export default function ReturnsPolicy() {
         </Section>
 
         <Section title="How to Start a Return">
-          Email {config.SUPPORT_EMAIL} with your Order ID, the reason for the return, and photos if
-          relevant. We'll confirm eligibility and next steps within 1–2 business days.
+         Go to our <a href="/return-request" className="text-bone underline underline-offset-4">Return / Replace</a> page, enter your Order ID and the email or phone number you checked 
+         out with, and submit your request. We'll confirm eligibility and next steps within 1–2 business days.
         </Section>
 
         <Section title="Order Cancellations">
