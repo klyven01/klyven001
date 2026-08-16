@@ -15,7 +15,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import ShippingPolicy from './pages/ShippingPolicy';
 import ReturnsPolicy from './pages/ReturnsPolicy';
-import ReturnRequest from './pages/ReturnRequest
+import ReturnRequest from './pages/ReturnRequest';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
 import Admin from './pages/Admin';
