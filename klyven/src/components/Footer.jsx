@@ -20,6 +20,7 @@ export default function Footer() {
             <p className="text-bone mb-1">Shop</p>
             <Link to="/shop" className="hover:text-bone">All Products</Link>
             <Link to="/track-order" className="hover:text-bone">Track Order</Link>
+            <Link to="/return-request" className="hover:text-bone">Return / Replace</Link>
           </div>
 
           <div className="flex flex-col gap-2">
