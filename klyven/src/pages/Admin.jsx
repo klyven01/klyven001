@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import SEO from '../components/SEO';
 import { supabase, isSupabaseConfigured } from '../lib/supabaseClient';
 import { getLocalOrders } from '../lib/orders';
+import { RETURN_STATUSES } from '../lib/returns';
 import config from '../config';
 
 const STATUSES = [
@@ -31,6 +32,7 @@ export default function Admin() {
   const [loginForm, setLoginForm] = useState({ email: '', password: '' });
   const [loginError, setLoginError] = useState('');
   const [orders, setOrders] = useState([]);
+  const [returnRequests, setReturnRequests] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -49,6 +51,11 @@ export default function Admin() {
     setLoading(true);
     const { data, error } = await supabase.from('orders').select('*').order('created_at', { ascending: false });
     if (!error) setOrders(data || []);
+    const { data: returnsData, error: returnsError } = await supabase
+      .from('return_requests')
+      .select('*')
+      .order('created_at', { ascending: false });
+    if (!returnsError) setReturnRequests(returnsData || []);
     setLoading(false);
   };
 
@@ -65,6 +72,11 @@ export default function Admin() {
 
   const updateOrder = async (orderRowId, fields) => {
     await supabase.from('orders').update(fields).eq('id', orderRowId);
+    fetchOrders();
+  };
+
+  const updateReturnRequest = async (requestRowId, fields) => {
+    await supabase.from('return_requests').update(fields).eq('id', requestRowId);
     fetchOrders();
   };
 
@@ -128,7 +140,57 @@ export default function Admin() {
       {loading ? (
         <p className="spec-tag text-steel">Loading...</p>
       ) : (
-        <OrdersTable orders={orders} onUpdate={updateOrder} />
+        <>
+          <OrdersTable orders={orders} onUpdate={updateOrder} />
+
+          <h2 className="font-display text-xl md:text-2xl text-bone mt-16 mb-6">Return / Replace Requests</h2>
+          {returnRequests.length === 0 ? (
+            <p className="spec-tag text-steel">No requests yet.</p>
+          ) : (
+            <div className="overflow-x-auto border border-line">
+              <table className="w-full text-left spec-tag">
+                <thead>
+                  <tr className="border-b border-line text-steel">
+                    <th className="p-3">Request #</th>
+                    <th className="p-3">Order ID</th>
+                    <th className="p-3">Customer</th>
+                    <th className="p-3">Type</th>
+                    <th className="p-3">Items</th>
+                    <th className="p-3">Reason</th>
+                    <th className="p-3">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {returnRequests.map((r) => (
+                    <tr key={r.id} className="border-b border-line/50 text-bone align-top">
+                      <td className="p-3 font-mono">{r.request_number}</td>
+                      <td className="p-3 font-mono">{r.order_id}</td>
+                      <td className="p-3 normal-case">
+                        {r.customer_name}
+                        <br />
+                        <span className="text-steel text-[0.6rem]">{r.phone} / {r.email}</span>
+                      </td>
+                      <td className="p-3 capitalize">{r.request_type}</td>
+                      <td className="p-3 normal-case max-w-[200px]">{r.items_description}</td>
+                      <td className="p-3 normal-case max-w-[160px]">{r.reason}</td>
+                      <td className="p-3">
+                        <select
+                          value={r.status}
+                          onChange={(e) => updateReturnRequest(r.id, { status: e.target.value })}
+                          className="bg-void border border-line px-2 py-1"
+                        >
+                          {RETURN_STATUSES.map((s) => (
+                            <option key={s} value={s}>{s}</option>
+                          ))}
+                        </select>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
