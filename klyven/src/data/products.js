@@ -25,6 +25,11 @@
  * the product page automatically swaps photos when the shopper picks a
  * colour. Products without `colorImages` just show the default
  * `images.front` / `images.back` regardless of colour.
+ *
+ * MULTI-LINE DESCRIPTIONS: if you want line breaks in a description, wrap
+ * the text in backticks ( ` ) instead of quotes ( ' ), like the
+ * "BE THE EXCEPTION" product below. Regular quotes ('...') can only hold
+ * ONE line of text — pasting multi-line text into them breaks the site.
  * ---------------------------------------------------------------
  */
 
@@ -163,10 +168,7 @@ export const products = [
     price: 699,
     compareAtPrice: 1000,
     description: 'Replace this with your real product description.',
-    // Default photos (used if colorImages doesn't have the selected colour)
     images: { front: '/products/design001frontblack.jpg.png', back: '/products/design001backblack.jpg' },
-    // Separate photos per colour — the product page swaps automatically
-    // when a shopper picks a colour.
     colorImages: {
       'Jet Black': { front: '/products/design001frontblack.jpg.png', back: '/products/design001backblack.jpg' },
       'Bone White': { front: '/products/design001frontwhite.jpg.png', back: '/products/design001backwhite.jpg' },
@@ -181,18 +183,16 @@ export const products = [
     fit: 'Oversized fit.',
     care: 'Machine wash cold, inside out. Do not bleach. Tumble dry low. Do not iron over print.',
   },
-{
-  id: 'BE THE EXCEPTION — Oversized T-Shirt',              // unique naam, spaces mat rakhna
-  sku: 'KLV-002',
-  category: 'tshirts',
-  name: 'DESIGN 002',
-  price: 599,
-  compareAtPrice: null,
-  description: 'Not made to blend in.
-A bold oversized streetwear essential built around one idea — BE THE EXCEPTION Featuring a statement back graphic designed for those who choose their own path
-  BE THE EXCEPTION  
-    
-    BE THE EXCEPTION.
+  {
+    id: 'be-the-exception',
+    sku: 'KLV-002',
+    category: 'tshirts',
+    name: 'BE THE EXCEPTION — Oversized T-Shirt',
+    price: 599,
+    compareAtPrice: null,
+    description: `Not made to blend in.
+
+A bold oversized streetwear essential built around one idea — BE THE EXCEPTION. Featuring a statement back graphic designed for those who choose their own path.
 
 Kuch log crowd follow karte hain. Kuch apna path banate hain.
 
@@ -200,49 +200,17 @@ KLYVEN ka Be The Exception Oversized T-Shirt ek bold statement piece hai, design
 
 Pair it with cargos, denim or relaxed-fit bottoms for an effortless everyday streetwear fit.
 
-KLYVEN — MOVE DIFFERENT.
-
-Product Details
-Fit: Oversized / Relaxed
-Style: Unisex Streetwear
-Colour: Black
-Graphic: Statement Back Print
-Sizes: S, M, L, XL, XXL, XXXL
-Collection: DROP 01
-Design: BE THE EXCEPTION
-Why You'll Like It
-Bold statement back graphic
-Relaxed oversized silhouette
-Easy to style
-Designed for everyday streetwear
-Unisex design
-Part of the limited KLYVEN DROP 01
-Style It With
-
-Cargos + sneakers + minimal accessories
-
-For a clean look, pair it with neutral bottoms.
-For a stronger streetwear look, go with cargos and chunky sneakers.
-
-Care Instructions
-Machine wash cold
-Wash inside out
-Wash dark colours separately
-Do not bleach
-Avoid direct ironing on the print
-Do not dry clean,.
-  
-  images: { front: '/products/design002blackfront.jpg', back: '/products/design002blackback.png' },
-  sizesAvailable: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL', ],
-  colors: [
-    { name: 'Jet Black', hex: '#0A0A0A' },
-  ],
-  inStock: true,
-  fabric: '240 GSM heavyweight combed cotton.',
-  fit: 'Oversized fit.',
-  care: 'Machine wash cold, inside out.',
-},
-  
+KLYVEN — MOVE DIFFERENT.`,
+    images: { front: '/products/design002blackfront.jpg', back: '/products/design002blackback.png' },
+    sizesAvailable: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
+    colors: [
+      { name: 'Jet Black', hex: '#0A0A0A' },
+    ],
+    inStock: true,
+    fabric: '240 GSM heavyweight combed cotton.',
+    fit: 'Oversized / Relaxed fit. Unisex streetwear silhouette with a statement back graphic print.',
+    care: 'Machine wash cold, inside out. Wash dark colours separately. Do not bleach. Avoid direct ironing on the print. Do not dry clean.',
+  },
 ];
 
 export const getProductById = (id) => products.find((p) => p.id === id);
