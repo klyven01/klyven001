@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { findOrder } from '../lib/orders';
 import { isSupabaseConfigured } from '../lib/supabaseClient';
@@ -131,6 +132,10 @@ export default function TrackOrder() {
               </a>
             )}
           </div>
+
+          <Link to="/return-request" className="block mt-6 spec-tag text-steel hover:text-bone">
+            Need a return or replacement? →
+          </Link>
         </div>
       )}
     </div>
