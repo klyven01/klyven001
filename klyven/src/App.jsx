@@ -15,6 +15,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import ShippingPolicy from './pages/ShippingPolicy';
 import ReturnsPolicy from './pages/ReturnsPolicy';
+import ReturnRequest from './pages/ReturnRequest
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
 import Admin from './pages/Admin';
@@ -49,6 +50,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/shipping-policy" element={<ShippingPolicy />} />
           <Route path="/returns-policy" element={<ReturnsPolicy />} />
+          <Route path="/return-request" element={<ReturnRequest />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/admin" element={<Admin />} />
